@@ -49,6 +49,7 @@ func main() {
     if err == nil && exists {
       log.Printf("Bucket %s already exists", bucketName)
     } else {
+      log.Printf("%s", err)
       log.Fatal("Error creating bucket")
     }
   } else {
