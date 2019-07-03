@@ -87,6 +87,11 @@ func AuthMiddleware(next httprouter.Handle) httprouter.Handle {
   		return
     }
 
+    if client.UserId == "" || ClientId == "" {
+      http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
+  		return
+    }
+
     context := context.WithValue(r.Context(), "user", client)
     next(w, r.WithContext(context), p)
   }
