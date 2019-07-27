@@ -87,7 +87,7 @@ func AuthMiddleware(next httprouter.Handle) httprouter.Handle {
   		return
     }
 
-    if client.UserId == "" || ClientId == "" {
+    if client.UserId == "" || client.ClientId == "" {
       http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
   		return
     }
